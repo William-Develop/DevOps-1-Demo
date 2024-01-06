@@ -1,39 +1,20 @@
-// import { expect, test } from "vitest";
-// import request from "supertest";
-// import app from "../index";
+const request = require ("supertest");
+const app = require ("../index.js");
+const http = require ("http");
 
-// const { expect, test } = require("vitest");
-// const request = require("supertest");
-// const app = require("../index"); 
+let server;
 
-// let server //store an instance of your server
-
-// test("GET /", async () => {
-//     server = app.listen()
-//     await request(server)
-//         .get("/")
-//         .expect("✨ Hello DevOps Demo! ✨")
-//     server.close()    
-// })
-
-// -----------------------
-
-// const request = require('supertest');
-import request from 'supertest';
-import app from '../index.js';
-// const app = require('../index.js');
-
-let server; //store an instance of your server
-
-// Use dynamic import() syntax to import the vitest module
-// const { expect, test } = await import('vitest');
-import { expect, test } from 'vitest';
-
-test('GET /', async () => {
-server = app.listen();
-await request(server)
-    .get('/')
-    .expect('✨ Hello DevOps Demo! ✨');
-server.close();
+beforeAll(() => {
+    server = http.createServer(app);
+    server.listen();
 });
 
+afterAll((done) => {
+    server.close(done);
+});
+
+test("GET /", async () => {
+    const response = await request(server).get("/");
+    expect(response.text).toBe("✨ Hello DevOps Demo! CI Completed ✨");
+    expect(response.status).toBe(200);
+}); 

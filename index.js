@@ -1,15 +1,10 @@
 // const express = require("express");
-import express from 'express';
+const express = require ('express');
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) =>{
-    res.send("✨ Hello DevOps Demo! ✨")
+    res.send("✨ Hello DevOps Demo! CI Completed ✨")
 });
 
-app.listen(port, () => {
-    console.log(`✨ Server listenig at http://localhost:${port} ✨`)
-})
-
-// module.exports = app;
-export default app;
+module.exports = app;

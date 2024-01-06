@@ -1,12 +1,11 @@
 {
-  "type": "module",
   "name": "demonstrate-devops-automation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "vitest && node ./tests/supertest.test.js"
+    "start": "node server.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +14,7 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "supertest": "^6.3.3",
     "vitest": "^1.1.3"
   }
