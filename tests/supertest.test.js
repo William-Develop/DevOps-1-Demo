@@ -18,7 +18,8 @@
 
 // -----------------------
 
-const request = require('supertest');
+// const request = require('supertest');
+import request from 'supertest';
 import app from '../index.js';
 // const app = require('../index.js');
 
