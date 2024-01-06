@@ -26,7 +26,8 @@ import app from '../index.js';
 let server; //store an instance of your server
 
 // Use dynamic import() syntax to import the vitest module
-const { expect, test } = await import('vitest');
+// const { expect, test } = await import('vitest');
+import { expect, test } from 'vitest';
 
 test('GET /', async () => {
 server = app.listen();
