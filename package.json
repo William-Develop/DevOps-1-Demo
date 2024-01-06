@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "vitest"
+    "test": "vitest && node ./test/supertest.test.js"
   },
   "keywords": [],
   "author": "",
