@@ -20,6 +20,7 @@
 
 const request = require('supertest');
 import app from '../index.js';
+// const app = require('../index.js');
 
 let server; //store an instance of your server
 
